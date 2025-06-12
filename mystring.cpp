@@ -60,6 +60,16 @@ public:
 		return len;
 	}
 
+	~Mystring()
+	{
+		if(res)
+		{
+			delete[] res;
+			res = nullptr;
+			len = 0;
+		}
+	}
+
 	friend std::ostream& operator<<(std::ostream& out, const Mystring& str);
 	friend std::istream& operator>>(std::istream& in, Mystring& str);
 	
